@@ -1,48 +1,38 @@
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var uglifycss = require('gulp-uglifycss');
-var pump = require('pump');
+var gulp        = require('gulp');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
-// Task create
-gulp.task('styles', function () {
-    gulp.src('style.styl')
-        .pipe(stylus())
-        .pipe(gulp.dest('./css/'));
-});
 
-// Auto task
-gulp.task('watch:styles', function () {
-    gulp.watch('**/*.styl', ['styles']);
-});
+const paths = {
+  sass: ['./src/scss/**/*.scss'],
+  html:['./src/**/*.html']
+}
 
-gulp.task('build',['concatJS','concatCSS','compressJS','compressCSS']);
-gulp.task('compressJS', function (cb) {
-    pump([
-            gulp.src('build/all.js'),
-            uglify(),
-            gulp.dest('dist')
-        ],
-        cb
-    );
+gulp.task('sass', function () {
+  return gulp.src(paths.sass)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream())
 });
-gulp.task('concatJS',function () {
-    return gulp.src(['./js/jquery.js','./js/scrolloverflow.js','./js/vivus.min.js','./js/jquery.fullpage.js','./js/typed.min.js'])
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('build'));
+ 
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./build"
+        }
+    });
 });
 
-gulp.task('concatCSS',function () {
-    return gulp.src('./css/**/*.css')
-        .pipe(concat('all.css'))
-        .pipe(gulp.dest('build'));
+gulp.task('watch', () => {
+  gulp.watch(paths.sass, ['sass']).on('change', browserSync.reload);
+  gulp.watch(paths.html, ['copy']).on('change', browserSync.reload);
 });
-gulp.task('compressCSS', function () {
-    gulp.src('./build/all.css')
-        .pipe(uglifycss({
-            "maxLineLen": 80,
-            "uglyComments": false
-        }))
-        .pipe(gulp.dest('dist'));
+
+gulp.task('copy', () => {
+  gulp.src(['./src/**/**', '!./src/scss'])
+    .pipe(gulp.dest('./build'))
 });
+
+gulp.task('default', ['watch', 'browser-sync', 'sass', 'copy']);
