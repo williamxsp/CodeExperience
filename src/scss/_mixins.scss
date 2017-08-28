@@ -3,6 +3,8 @@
   font-size: 2.7rem;
   font-weight: 800;
   color: $color;
+  padding:20px 0 40px 0;
+  text-align:center;
 
   &::before {
     content: $addon;
