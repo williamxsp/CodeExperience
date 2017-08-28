@@ -1,0 +1,127 @@
+@import 'variables';
+@import 'mixins';
+
+#schedule{
+    background: $color-front;
+    color:$color-light;
+
+    h1{
+        @include titulo($color-light, $color-mobile)
+    }
+
+    ul{
+        list-style: none;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: $color-light;
+            left: 50%;
+            top:0;
+            z-index: 1;
+        }
+        display: flex;
+        flex-direction: column;
+        
+
+        li {
+                z-index: 2;
+                color:$color-mobile;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 1rem;
+                padding:30px 0;
+                display: flex;
+                justify-content: flex-end;
+                div{
+                    padding-right:30px
+                }
+        }
+
+        
+
+        li.month{
+            justify-content: center;
+            text-align: center;
+            
+
+            div{
+                background: $color-mobile;
+                display: inline-block;
+                padding: 0.8rem 1.8rem;
+                color:$color-light;
+                border-radius:1000px;
+                width: auto;
+            }
+        }
+
+        li div{
+            width: 50%;
+        }
+
+        li.milestone{
+            
+            line-height: 50px;
+            div{
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    background: $color-mobile;
+                    border: 5px solid $color-light;
+                    left: -31px;
+                    top:43%;
+                    border-radius:1000px;
+                  }
+            }
+        }
+
+        li.day{
+            
+            font-weight: normal;
+            
+           h5{
+            text-transform: none;
+            font-size: 1rem;
+
+           }
+           p{
+               color:$color-light;
+               text-transform: uppercase;
+               font-size: 1rem;
+               margin: 0;
+           }
+
+           div{
+            position: relative;
+               &::before{
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: $color-mobile;
+                left: -26px;
+                top:50%;
+                border-radius:1000px;
+            }
+            }
+        }
+
+        li:nth-child(2n) {
+            text-align: right;
+            justify-content: flex-start;
+            div{
+                padding-left:30px
+            }
+
+            div::before{
+                left: auto;
+                right:60px;
+            }
+        }
+    }
+}
