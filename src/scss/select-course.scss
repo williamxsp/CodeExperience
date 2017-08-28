@@ -1,0 +1,122 @@
+@import 'variables';
+@import 'mixins';
+
+#select-course {
+  text-align: center;
+  background: url(../img/grade/background.svg) no-repeat center;
+
+  h1 {
+    @include titulo($color-mobile, transparent, none);
+    font-weight: lighter;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    transition: $transition-default;
+  }
+
+  p {
+    color: $color-front;
+    transition: $transition-default;
+  }
+
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    transform-origin: left;
+    transition: $transition-default;
+  }
+
+  li {
+    width: 25%;
+    padding: 2rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: $grey;
+  }
+
+
+  .course {
+    text-align: left;
+    .column {
+      flex: 50%;
+      padding: 1rem;
+    }
+
+    li {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+      color: $color-dark;
+      font-weight: 800;
+    }
+
+    p {
+      color: $color-mobile;
+    }
+
+    .grade a {
+      background: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: block;
+      padding: 1.4rem 1.4rem;
+      position: relative;
+      box-shadow: 0 0 25px 2px rgba(0,0,0,.15);
+
+      &::after {
+        content: 'a';
+        position: absolute;
+        right: 1rem;
+      }
+    }
+
+    .grade > li {
+      > ul {
+        background: $color-mobile;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        margin: 0.5rem;
+      }
+    }
+
+
+    .grade .module-items {
+      list-style: square;
+      list-style-position: inside;
+       li {
+        padding: 0.8rem;
+       }
+    }
+  }
+
+
+  &.active {
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      opacity: 0;
+    }
+
+    ul {
+      transform: scale(0.8);
+    }
+  }
+}
