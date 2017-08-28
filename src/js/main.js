@@ -45,3 +45,14 @@ gradeButtons.forEach((button) => {
     e.preventDefault();
   });
 })
+
+window.addEventListener('scroll', (e) => {
+  var banner = document.querySelector('#banner');
+  var header = document.querySelector('header');
+  bannerHeight = banner.offsetHeight;
+  if (window.scrollY > bannerHeight / 2) {
+    header.classList.add('scrolled')
+  } else {
+    header.classList.remove('scrolled')
+  }
+});
