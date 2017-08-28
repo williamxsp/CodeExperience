@@ -21,6 +21,8 @@ header{
         padding-bottom: 40px;
     }
 
+    
+
     p, h3{
         text-align: center;
     }
@@ -47,4 +49,21 @@ header{
      &.swiper-pagination-bullet-active{
         background:$color-light;
      }
+}
+
+.swiper-button-prev{
+    background-image: url(../img/missao/arrow.svg);
+    background-size: contain;
+    transform: rotate(270deg);
+    top:20%;
+    
+
+}
+
+.swiper-button-next{
+    background-image: url(../img/missao/arrow.svg);
+    transform: rotate(90deg);
+    background-size: contain;
+    top:20%;
+    
 }
