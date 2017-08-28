@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'fonts';
 @import '_mixins';
+@import 'navbar';
 
 html, body, h1, h2, h3, h4{
   margin: 0;
@@ -61,41 +62,6 @@ input {
 
 section{
   min-height: 100vh;
-}
-
-header{
-  position: fixed;
-  width: 100%;
-  top: 0;
-  li{
-    display: inline-block;
-    padding:0 5px;
-    a{
-      color: #FFF;
-      text-transform: uppercase;
-      font-size: 1rem;
-      padding: 0 5px 5px 0;
-      display: inline-block
-    }
-    &.active{
-      font-weight: bolder;
-      border-bottom:2px solid $color-back;
-    }
-  }
-}
-
-nav{
-  transform: translateY(50px);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  .subscribe{
-    display: flex;
-    align-items: center;
-  }
-  ul {
-    padding: 0;
-  }
 }
 
 #banner{
