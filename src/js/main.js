@@ -46,13 +46,34 @@ gradeButtons.forEach((button) => {
   });
 })
 
+var secionts = {
+  banner: document.querySelector('#banner'),
+  courses: document.querySelector('#courses'),
+  contact: document.querySelector('#schedule'),
+  contact: document.querySelector('#contact')
+};
 window.addEventListener('scroll', (e) => {
-  var banner = document.querySelector('#banner');
   var header = document.querySelector('header');
+  var scrollY = window.scrollY;
   bannerHeight = banner.offsetHeight;
-  if (window.scrollY > bannerHeight / 2) {
+  
+  if (scrollY > bannerHeight / 2) {
     header.classList.add('scrolled')
   } else {
     header.classList.remove('scrolled')
   }
+
+  if((scrollY > courses.offsetTop && scrollY < courses.offsetTop + courses.offsetHeight) || 
+    ((scrollY > contact.offsetTop && scrollY < contact.offsetTop + contact.offsetHeight))) {
+    header.classList.add('bg-iot')
+  } else {
+    header.classList.remove('bg-iot')
+  }
+
+  if(scrollY > schedule.offsetTop && scrollY < schedule.offsetTop + schedule.offsetHeight) {
+    header.classList.add('bg-front')
+  } else {
+    header.classList.remove('bg-front')
+  }
+
 });
