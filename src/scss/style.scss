@@ -5,6 +5,7 @@
 @import 'navbar';
 @import 'select-course';
 @import 'courses';
+@import 'contact';
 
 html, body, h1, h2, h3, h4{
   margin: 0;
@@ -51,6 +52,7 @@ input {
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
@@ -148,11 +150,3 @@ section{
     font-size: 1.4rem;
   }
 }
-
-
-#contact {
-  background: red;
-  padding: 5rem;
-}
-
-

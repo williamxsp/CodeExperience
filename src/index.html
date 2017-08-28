@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>SENAI Code Experience</title>
 </head>
@@ -309,7 +309,7 @@
     <div class="column">
       <div id="map"></div>
     </div>
-    <div class="column">
+    <div class="column form-wrapper">
       <h1>Fale conosco</h1>
       <form>
         <input type="text" placeholder="// Nome" required />
@@ -320,22 +320,22 @@
         <button class="button has-shadow filled">Enviar mensagem</button>
       </form>
 
-      <a href="informatica.sp.senai.br" rel="noopener">
-        <i class="icon site"></i>
+      <a href="informatica.sp.senai.br" rel="noopener" class="website">
+        <i class="fa fa-globe"></i>
         informatica.sp.senai.br
       </a>
 
       <div class="row">
-        <a href="https://facebook.com/senaiinformatica">
-          <i class="icon facebook"></i>
+        <a href="https://facebook.com/senaiinformatica" class="social-media">
+          <i class="fa fa-facebook"></i>
           @senaiinformatica
         </a>
-        <a href="https://twitter.com/senaiinformatica">
-          <i class="icon twitter"></i>
+        <a href="https://twitter.com/senaiinformatica" class="social-media">
+          <i class="fa fa-twitter"></i>
           @senaiinformatica
         </a>
-        <a href="https://instagram.com/senaiinformatica">
-          <i class="icon insta"></i>
+        <a href="https://instagram.com/senaiinformatica" class="social-media">
+          <i class="fa fa-instagram"></i>
           @senaiinformatica
         </a>
       </div>
@@ -344,6 +344,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
   <script src="js/main.js"></script>
+  <script defer src="js/maps.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJnW8IAC2K2DzHLQUen07VGTNmnmaeQ60&libraries=places&callback=initMap"></script>
 </body>
 
 </html>

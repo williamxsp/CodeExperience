@@ -1,0 +1,80 @@
+@import 'variables';
+@import 'mixins';
+
+#contact {
+  background: $color-iot;
+  text-align: left;
+  .column {
+    flex: 50% 0;
+  }
+
+  .form-wrapper {
+    padding: 4rem;
+  }
+
+  form {
+    input, textarea {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    button {
+      @include button($color-mobile);
+      display: block;
+      margin: auto;
+      margin-top: -1.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+
+  h1 {
+    @include titulo(#fff);
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .website {
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .social-media {
+    margin: 0.5rem;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+  #contact {
+    display: flex;
+    flex-direction: column;
+
+    #map{
+      min-height: 60vh;
+    }
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  #contact {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .form-wrapper {
+      padding: 2rem;
+    }
+  }
+}
