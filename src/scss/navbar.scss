@@ -4,9 +4,10 @@ header{
   position: fixed;
   width: 100%;
   top: 0;
+  padding: 20px 0;
   li{
     display: inline-block;
-    padding:0 5px;
+    padding: 5px 5px;
     a{
       color: #FFF;
       text-transform: uppercase;
@@ -19,11 +20,67 @@ header{
       border-bottom:2px solid $color-back;
     }
   }
+
+  &.active {
+    nav {
+      opacity: 1;
+      transform: none;
+    }
+
+    .toggle-menu {
+      span {
+        background: transparent;
+      }
+      span::before {
+        background: #ffffff;
+        transform: translateY(7px) rotate(45deg);
+      }
+      span::after {
+        background: #ffffff;
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
 }
 
 
+.toggle-menu {
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+  border: 2px solid #fff;
+  background: none;
+  display: none;
+  margin: 0 16px;
+  position: relative;
+  z-index: 100;
+
+
+  span {
+    background: #fff;
+    width: 100%;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: $transition-default;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background: inherit;
+      left: 0;
+      transition: $transition-default;
+      will-change: transform;
+    }
+
+    &::before { top: -7px; }
+    &::after { bottom: -7px; }
+  }
+}
+
 nav{
-  transform: translateY(50px);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -33,5 +90,53 @@ nav{
   }
   ul {
     padding: 0;
+    margin: 0;
+  }
+}
+
+.subscribe {
+  margin: auto;
+}
+
+
+@media screen and (max-width: 780px) {
+  header {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .toggle-menu {
+    display: block;
+  }
+  
+  nav {
+    width: 100%;
+    min-height: 100%;
+    background: $color-mobile;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: $transition-default;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding: 1rem;
+        font-size: 2rem;
+      }
+    }
+
+    .subscribe {
+      margin-top: 1rem;
+    }
   }
 }
