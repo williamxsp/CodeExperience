@@ -73,7 +73,8 @@ section{
 }
 
 #banner{
-  background: $color-mobile;
+  background: url(../img/inicio/top-bg.jpg) $color-mobile;
+  background-size: cover;
   padding-top: 35vh;
   color: #fff;
 

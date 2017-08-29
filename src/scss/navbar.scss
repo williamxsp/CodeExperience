@@ -3,7 +3,6 @@
 $transition-logo: 0.2s ease-in;
 
 header{
-  background: $color-mobile;
   &.bg-iot.scrolled {
     background: $color-iot;
     box-shadow: none;
@@ -83,6 +82,7 @@ header{
   }
  
   &.scrolled {
+    background: $color-mobile;
     box-shadow: 0 2px 15px 3px rgba(0,0,0,.3);
     .logo {
       transform: scale(1);
