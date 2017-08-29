@@ -93,6 +93,7 @@ header{
     nav {
       opacity: 1;
       transform: none;
+      pointer-events: all;
     }
 
     .toggle-menu {
@@ -172,6 +173,7 @@ header{
     left: 0;
     top: 0;
     opacity: 0;
+    pointer-events: none;
     transform: translateY(-10px);
     transition: $transition-default;
 
