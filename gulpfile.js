@@ -7,7 +7,8 @@ const paths = {
   sass: ['./src/scss/**/*.scss'],
   html:['./src/**/*.html'],
   script:['./src/js/**/*.js'],
-  image:['./src/img/**/**']
+  image:['./src/img/**/**'],
+  download:['./src/**/*.pdf']
 }
 
 gulp.task('sass', function () {
@@ -31,6 +32,8 @@ gulp.task('watch', () => {
   gulp.watch(paths.sass, ['sass']).on('change', browserSync.reload);
   gulp.watch(paths.html, ['copy']).on('change', browserSync.reload);
   gulp.watch(paths.script, ['copy']).on('change', browserSync.reload);
+  gulp.watch(paths.image, ['copy']).on('change', browserSync.reload);
+  gulp.watch(paths.download, ['copy']).on('change', browserSync.reload);
 });
 
 gulp.task('copy', () => {

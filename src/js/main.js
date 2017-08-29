@@ -81,3 +81,11 @@ window.addEventListener('scroll', (e) => {
   }
 
 });
+
+let typed = new Typed('.typing', { 
+  strings: ["mobile", "front-end", "back-end", "iot"],
+  typeSpeed:70,
+  backSpeed:50,
+  backDelay: 1500,
+  loop: true,
+})
