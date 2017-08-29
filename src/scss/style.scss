@@ -99,6 +99,10 @@ section{
     background-size: contain;
   }
 
+  .subscribe {
+    display: none;
+  }
+
   .brought-by{
     display: flex;
     flex: 1;
@@ -174,9 +178,13 @@ section{
       transform: none;
     }
 
+    .subscribe {
+      display: block;
+    }
+
     p {
       padding-top: 10vh;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     .brought-by {
