@@ -154,6 +154,20 @@ header{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    padding: 0.7rem 0;
+    &.scrolled {
+      .logo {
+        transform: scale(0.7);
+      }
+    }
+  }
+
+
+  .logo {
+    transform: scale(0.7);
+    opacity: 1;
+    margin-top: -3rem;
+
   }
 
   .toggle-menu {
@@ -184,8 +198,7 @@ header{
       padding-bottom: 5rem;
 
       li {
-        padding: 1rem;
-        font-size: 2rem;
+        font-size: 1rem;
       }
     }
 
