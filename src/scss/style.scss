@@ -79,7 +79,7 @@ section{
 
   .wrapper {
     margin-top: 0;
-    height: 50vh;
+    min-height: 50vh;
   }
 
   p {
@@ -160,6 +160,16 @@ section{
 
 
 @media screen and (max-width: 740px) {
+  #banner {
+    padding-top: 15vh;
+    .brought-by {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+
   #mission {
     padding: 1rem;
     figure {
