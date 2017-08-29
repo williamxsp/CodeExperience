@@ -23,6 +23,10 @@ body {
   color: $grey;
 }
 
+section{
+  line-height: 1.5;
+}
+
 a {
   text-decoration: none;
 }
@@ -40,7 +44,12 @@ p{
 
   &.light{
     @include button(#FFF);
+    &:hover{
+      color: $color-mobile;
+    }
   }
+
+  
 
   &.mobile{
     @include button($color-mobile);
