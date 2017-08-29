@@ -133,6 +133,7 @@ section{
 }
 
 #mission{
+  display: flex;
   div{
     flex:50%;
     justify-content: center;
@@ -140,7 +141,8 @@ section{
   }
 
   h1{
-    @include titulo($color-dark, $color-dark, none)
+    @include titulo($color-dark, $color-dark, none);
+    text-align: left;
   }
 
   h3{

@@ -29,9 +29,13 @@ selectCoursesButton.forEach((item) => {
 
 
 function selectCourse(e) {
-  console.log();
   e.preventDefault();
   var targetElem = document.querySelector(e.currentTarget.hash);
+  
+  var activeCourse = document.querySelector('.course.active')
+  if(activeCourse)
+  activeCourse.classList.remove('active');
+
   selectCoursesContainer.classList.add('active');
   targetElem.classList.add('active');
 }
