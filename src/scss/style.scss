@@ -157,3 +157,13 @@ section{
     font-size: 1.4rem;
   }
 }
+
+
+@media screen and (max-width: 740px) {
+  #mission {
+    padding: 1rem;
+    figure {
+      display: none;
+    }
+  }
+}
