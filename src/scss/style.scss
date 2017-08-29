@@ -38,6 +38,10 @@ p{
   &.light{
     @include button(#FFF);
   }
+
+  &.mobile{
+    @include button($color-mobile);
+  }
 }
 
 input {
