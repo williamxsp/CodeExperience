@@ -55,11 +55,13 @@
   .course {
     text-align: left;
     opacity: 0;
+    display: none;
     transform: translateY(-15px);
     transition: 0.2s ease-in 0.1s;
 
     &.active {
       opacity: 1;
+      display: flex;
       transform: none;
     }
 
@@ -146,5 +148,9 @@
     ul.course-list {
       transform: scale(0.8);
     }
+  }
+
+  a{
+    z-index: 2;
   }
 }
