@@ -8,6 +8,10 @@
     flex: 50% 0;
   }
 
+  .row {
+    flex-wrap: wrap;
+  }
+
   .form-wrapper {
     padding: 4rem;
   }

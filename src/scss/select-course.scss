@@ -197,6 +197,10 @@
     .course {
       flex-direction: column;
 
+      h2 {
+        font-size: 2rem;
+      }
+
       .column {
         width: 100%;
         flex: 100%;
