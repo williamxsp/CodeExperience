@@ -74,7 +74,7 @@ window.addEventListener('scroll', (e) => {
   var scrollY = window.scrollY;
   bannerHeight = banner.offsetHeight;
   
-  if (scrollY > bannerHeight / 2) {
+  if (scrollY > header.offsetHeight) {
     header.classList.add('scrolled')
   } else {
     header.classList.remove('scrolled')
