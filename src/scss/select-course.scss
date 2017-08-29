@@ -108,9 +108,13 @@
       box-shadow: 0 0 25px 2px rgba(0,0,0,.15);
 
       &::after {
-        content: 'a';
+        content: '';
+        background: url(../img/arrow.svg) no-repeat;
         position: absolute;
         right: 1rem;
+        width: 25px;
+        height: 25px;
+        transform: translateY(-7px) rotate(180deg);
       }
     }
 
