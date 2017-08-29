@@ -67,8 +67,13 @@
     }
 
     .column {
-      flex: 50%;
+      flex: 45%;
+      width: 45%;
       padding: 1rem;
+    }
+
+    img {
+      object-fit: cover;
     }
 
     li {

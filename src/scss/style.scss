@@ -57,7 +57,6 @@ input {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .column {
@@ -140,7 +139,8 @@ section{
 
 #mission{
   display: flex;
-  div{
+  div, figure{
+    width: 50%;
     flex:50%;
     justify-content: center;
     align-items: center
