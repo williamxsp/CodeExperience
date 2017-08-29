@@ -20,16 +20,16 @@
       <h1 class="logo"><a href="#">Code Experience</a></h1>
       <nav>
         <ul>
-          <li class="active"><a href="">A missão</a></li>
-          <li><a href="#">Os cursos</a></li>
-          <li><a href="#">Agenda</a></li>
-          <li><a href="#">Equipe</a></li>
-          <li><a href="#">Parceiros</a></li>
-          <li><a href="#">Fale conosco</a></li>
+          <li class="active"><a href="#mission">A missão</a></li>
+          <li><a href="#courses">Os cursos</a></li>
+          <li><a href="#schedule">Agenda</a></li>
+          <!--<li><a href="#">Equipe</a></li>-->
+          <!--<li><a href="#">Parceiros</a></li>-->
+          <li><a href="#contact">Fale conosco</a></li>
         </ul>
 
         <div class="subscribe">
-          <a href="" class="button light">Inscreva-se</a>
+          <a href="https://inscricaoeventos.sesisenaisp.org.br/SENAICodeExperience2017" class="button light">Inscreva-se</a>
         </div>
       </nav>
     </div>
@@ -496,12 +496,14 @@
     </div>
     <div class="column form-wrapper">
       <h1>Fale conosco</h1>
-      <form>
-        <input type="text" placeholder="// Nome" required />
-        <input type="email" placeholder="// Email" required />
+      <form action="https://formspree.io/senaicodeexperience@gmail.com" method="POST">
+        <input type="text" placeholder="// Nome" name="nome" required />
+        <input type="email" placeholder="// Email" name="email" required />
 
-        <textarea cols="30" rows="10"></textarea>
-
+        <textarea cols="30" rows="10" name="mensagem"></textarea>
+<input type="hidden" name="_next" value="https://codexp.sp.senai.br" />
+                    <input type="hidden" name="_subject" value="CODEXP | Novo Contato " />
+                    <input type="text" name="_gotcha" style="display:none" />
         <button class="button has-shadow filled">Enviar mensagem</button>
       </form>
 
