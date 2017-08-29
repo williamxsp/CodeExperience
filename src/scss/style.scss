@@ -75,6 +75,7 @@ section{
 #banner{
   background: url(../img/inicio/top-bg.jpg) $color-mobile;
   background-size: cover;
+  background-position: center;
   padding-top: 35vh;
   color: #fff;
 
@@ -163,7 +164,32 @@ section{
 @media screen and (max-width: 740px) {
   #banner {
     padding-top: 15vh;
+    .wrapper {
+      min-height: 75vh;
+    }
+
+    .logo {
+      width: 100%;
+      padding: 0;
+      transform: none;
+    }
+
+    p {
+      padding-top: 10vh;
+      font-size: 1.4rem;
+    }
+
     .brought-by {
+      img {
+        width: 45%;
+        margin: 0;
+        object-fit: contain;
+      }
+
+      .logos {
+        display: flex;
+        justify-content: space-between;
+      }
       &::before {
         content: none;
       }
