@@ -6,7 +6,8 @@ var sass = require('gulp-sass');
 const paths = {
   sass: ['./src/scss/**/*.scss'],
   html:['./src/**/*.html'],
-  script:['./src/js/**/*.js']
+  script:['./src/js/**/*.js'],
+  image:['./src/img/**/**']
 }
 
 gulp.task('sass', function () {
