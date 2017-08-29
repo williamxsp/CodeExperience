@@ -20,6 +20,12 @@ toggleMenu.addEventListener('click', (e) => {
   menu.classList.toggle('active');
 });
 
+toggleMenu.parentNode.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", clickE =>{
+    menu.classList.toggle('active')
+  })
+})
+
 var selectCoursesContainer = document.querySelector('#select-course');
 var selectCoursesButton = document.querySelectorAll('#select-course .course-list a');
 
@@ -38,6 +44,7 @@ function selectCourse(e) {
 
   selectCoursesContainer.classList.add('active');
   targetElem.classList.add('active');
+  targetElem.scrollIntoView(true)
 }
 
 
