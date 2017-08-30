@@ -12,7 +12,6 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     transition: $transition-default;
-    padding-bottom: 0.5rem;
     padding: 0.5rem 2.2rem;
   }
 
@@ -228,5 +227,13 @@
         max-width: 350px;
       }
     }
+  }
+}
+
+
+@media screen and (max-width: 350px){
+  #select-course .course img{
+    max-width: calc(100vw - 4rem);
+    max-height: calc(100vw - 4rem);
   }
 }
