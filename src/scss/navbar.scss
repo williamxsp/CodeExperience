@@ -3,15 +3,17 @@
 $transition-logo: 0.2s ease-in;
 
 header{
-  &.bg-iot.scrolled {
+  &.courses.scrolled,
+  &.contact.scrolled{
     background: $color-iot;
     box-shadow: none;
   }
 
-  &.bg-front.scrolled {
+  &.schedule.scrolled {
     background: $color-front;
     box-shadow: none;
   }
+
 
   width: 100%;
   padding: 25px 0 20px 0;

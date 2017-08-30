@@ -2,8 +2,7 @@ const windowWidth = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
 
-
-
+var header = document.querySelector('header');
 
 var mySwiper = new Swiper('.swiper-container', {
   speed: 400,
@@ -69,8 +68,27 @@ var secionts = {
   contact: document.querySelector('#schedule'),
   contact: document.querySelector('#contact')
 };
+
+var sections = document.querySelectorAll("body > section");
+function verifySectionsActive(){
+    var offsets = [].map.call(sections,  section => {
+        header.classList.remove(section.id);
+        return { id: section.id, y: Math.abs(section.getBoundingClientRect().top)}
+    });
+
+    var newOffsets =  offsets.sort((a,b)=>a.y > b.y);
+    header.classList.add(newOffsets[0].id);
+
+    var activeLink = header.querySelector("a.active");
+    if(activeLink)
+        activeLink.classList.remove('active');
+    var nextLink = header.querySelector("a[href='#"+newOffsets[0].id+"']");
+    if(nextLink)
+        nextLink.classList.add('active');
+
+};
+
 window.addEventListener('scroll', (e) => {
-  var header = document.querySelector('header');
   var scrollY = window.scrollY;
   bannerHeight = banner.offsetHeight;
   
@@ -79,8 +97,10 @@ window.addEventListener('scroll', (e) => {
   } else {
     header.classList.remove('scrolled')
   }
+    verifySectionsActive();
 
-  if((scrollY > courses.offsetTop && scrollY < courses.offsetTop + courses.offsetHeight) || 
+
+  if((scrollY > courses.offsetTop && scrollY < courses.offsetTop + courses.offsetHeight) ||
     ((scrollY > contact.offsetTop && scrollY < contact.offsetTop + contact.offsetHeight))) {
     header.classList.add('bg-iot')
   } else {

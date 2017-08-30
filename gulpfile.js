@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 
 const paths = {
   sass: ['./src/scss/**/*.scss'],
+  css: ['./css/**/*.css'],
   html:['./src/**/*.html'],
   script:['./src/js/**/*.js'],
   image:['./src/img/**/**'],
@@ -29,7 +30,8 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(paths.sass, ['sass']).on('change', browserSync.reload);
+  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.sass, ['css']).on('change', browserSync.reload);
   gulp.watch(paths.html, ['copy']).on('change', browserSync.reload);
   gulp.watch(paths.script, ['copy']).on('change', browserSync.reload);
   gulp.watch(paths.image, ['copy']).on('change', browserSync.reload);
