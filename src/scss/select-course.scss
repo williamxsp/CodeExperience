@@ -7,18 +7,17 @@
   padding-top: 8rem;
 
   h1 {
-    @include titulo($color-mobile, transparent, none);
+    @include titulo($color-front, transparent, none);
     font-weight: lighter;
     font-size: 1.8rem;
     text-transform: uppercase;
     transition: $transition-default;
-    padding-bottom: 0.5rem;
     padding: 0.5rem 2.2rem;
   }
 
   p {
     padding-top: 1rem;
-    color: $color-front;
+    color: $grey;
     transition: $transition-default;
   }
 
@@ -80,7 +79,10 @@
 
     img {
       object-fit: cover;
-      max-height: 440px;
+      height: 440px;
+      width: 440px;
+      border: 10px solid #743AD0;
+      border-radius: 100%;
     }
 
     li {
@@ -106,6 +108,7 @@
       padding: 1.4rem 1.4rem;
       position: relative;
       box-shadow: 0 0 25px 2px rgba(0,0,0,.15);
+      color: $grey;
 
       &::after {
         content: '';
@@ -220,8 +223,17 @@
 
       img {
         object-fit: cover;
-        max-height: 250px;
+        max-height: 350px;
+        max-width: 350px;
       }
     }
+  }
+}
+
+
+@media screen and (max-width: 350px){
+  #select-course .course img{
+    max-width: calc(100vw - 4rem);
+    max-height: calc(100vw - 4rem);
   }
 }

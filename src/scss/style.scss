@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'smooth-scrollbar';
 @import 'variables';
 @import 'fonts';
 @import '_mixins';
@@ -7,6 +8,7 @@
 @import 'courses';
 @import 'contact';
 @import 'schedule';
+
 
 html, body, h1, h2, h3, h4, h5{
   margin: 0;
@@ -19,6 +21,10 @@ html, body, h1, h2, h3, h4, h5{
 body {
   @include paragraph();
   color: $grey;
+}
+
+section{
+  line-height: 1.5;
 }
 
 a {
@@ -38,7 +44,12 @@ p{
 
   &.light{
     @include button(#FFF);
+    &:hover{
+      color: $color-mobile;
+    }
   }
+
+  
 
   &.mobile{
     @include button($color-mobile);

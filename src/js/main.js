@@ -3,6 +3,8 @@ const windowWidth = window.innerWidth
 || document.body.clientWidth;
 
 
+
+
 var mySwiper = new Swiper('.swiper-container', {
   speed: 400,
   spaceBetween: 100,
@@ -22,7 +24,11 @@ toggleMenu.addEventListener('click', (e) => {
 
 toggleMenu.parentNode.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", clickE =>{
-    menu.classList.toggle('active')
+    clickE.preventDefault();
+    var targetElem = document.querySelector(clickE.currentTarget.hash);
+    window.scrollBy({top:targetElem.getBoundingClientRect().top - document.querySelector("header").getBoundingClientRect().height, behavior: 'smooth' });
+    menu.classList.toggle('active');
+
   })
 })
 
@@ -44,7 +50,7 @@ function selectCourse(e) {
 
   selectCoursesContainer.classList.add('active');
   targetElem.classList.add('active');
-  targetElem.scrollIntoView(true)
+  window.scrollBy({top:targetElem.getBoundingClientRect().top - document.querySelector("header").getBoundingClientRect().height, behavior: 'smooth' });
 }
 
 
@@ -68,7 +74,7 @@ window.addEventListener('scroll', (e) => {
   var scrollY = window.scrollY;
   bannerHeight = banner.offsetHeight;
   
-  if (scrollY > bannerHeight / 2) {
+  if (scrollY > header.offsetHeight) {
     header.classList.add('scrolled')
   } else {
     header.classList.remove('scrolled')

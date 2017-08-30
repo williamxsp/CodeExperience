@@ -20,8 +20,11 @@
 
     
 
-    p, h3{
+    h3{
         text-align: center;
+        margin-top: 30px;
+        color: $color-light;
+        padding: 10px;
     }
 
     h4{
@@ -30,6 +33,7 @@
 
     p{
         margin:10px 0;
+        text-align: center;
     }
 
     img{
@@ -64,3 +68,9 @@
     top:20%;
     
 }
+figure{
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
