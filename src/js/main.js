@@ -21,7 +21,7 @@ toggleMenu.addEventListener('click', (e) => {
   menu.classList.toggle('active');
 });
 
-toggleMenu.parentNode.querySelectorAll("nav ul a").forEach(link => {
+toggleMenu.parentNode.querySelectorAll("nav ul a:not([download])").forEach(link => {
   link.addEventListener("click", clickE =>{
     clickE.preventDefault();
     var targetElem = document.querySelector(clickE.currentTarget.hash);
